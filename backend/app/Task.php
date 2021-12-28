@@ -16,11 +16,19 @@ class Task extends Model
         return $this->all();
     }
 
-    public function store($request) {
-        return $this->create($request->all());
+    public function show($id) {
+        return $this->find($id);
     }
 
-    public function update($request) {
-        return $this->update($request->all());
+    public function store($inputs) {
+        return $this->create($inputs);
+    }
+
+    public function updateTask($inputs) {
+        return $this->where('id', $inputs->id)->update($inputs);
+    }
+
+    public function destroyTask($id) {
+        return $this->delete();
     }
 }

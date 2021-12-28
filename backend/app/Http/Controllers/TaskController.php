@@ -17,15 +17,21 @@ class TaskController extends Controller
         return $this->task->getTaskAll();
     }
 
-    public function show(Task $task) {
-        return $task;
+    public function show(Request $request) {
+        return $this->task->show($request->id);
     }
 
     public function store(Request $request) {
-        return $this->task->store($request);
+        $inputs = $request->input();
+        return $this->task->store($inputs);
     }
 
     public function update(Request $request) {
-        return $this->task->update($request);
+        $inputs = $request->all();
+        return $this->task->updateTask($inputs);
+    }
+
+    public function destroy(Request $request) {
+        return $this->task->destroyTask($request->id);
     }
 }
