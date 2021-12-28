@@ -22,6 +22,10 @@ class TaskController extends Controller
     }
 
     public function store(Request $request) {
-        return $this->task->storeTask($request);
+        return $this->task->store($request);
+    }
+
+    public function update(Request $request) {
+        return $this->task->update($request);
     }
 }

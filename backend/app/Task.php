@@ -16,7 +16,11 @@ class Task extends Model
         return $this->all();
     }
 
-    public function storeTask($request) {
+    public function store($request) {
         return $this->create($request->all());
+    }
+
+    public function update($request) {
+        return $this->update($request->all());
     }
 }
