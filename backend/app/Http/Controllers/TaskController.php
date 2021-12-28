@@ -20,4 +20,8 @@ class TaskController extends Controller
     public function show(Task $task) {
         return $task;
     }
+
+    public function store(Request $request) {
+        return $this->task->storeTask($request);
+    }
 }
