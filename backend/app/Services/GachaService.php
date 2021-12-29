@@ -18,10 +18,14 @@ class GachaService
     }
 
     public function getGachaInfo() {
-        $array = $this->characters;
-        array_push($array, $this->gradeProbability);
+        $infos = array();
+        foreach ($this->gradeProbability as $grade => $var) {
+            $value = $var / 100;
+            $infos["grades"][$grade] = $value;
+        }
+        $infos["characters"] = $this->characters;
 
-        return $array;
+        return $infos;
     }
 
     /**

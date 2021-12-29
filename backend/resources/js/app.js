@@ -4,6 +4,7 @@ import TaskListComponent    from "./components/TaskListComponent";
 import TaskShowComponent    from "./components/TaskShowComponent";
 import TaskCreateComponent  from "./components/TaskCreateComponent";
 import TaskEditComponent    from "./components/TaskEditComponent";
+import GachaHomeComponent   from "./components/GachaHomeComponent";
 
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -53,6 +54,11 @@ const router = new VueRouter({
             component:  TaskEditComponent,
             props: true
         },
+        {
+            path:   '/rolls',
+            name:   'rolls.info',
+            component: GachaHomeComponent
+        }
     ]
 });
 
