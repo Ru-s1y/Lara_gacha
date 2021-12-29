@@ -1,44 +1,61 @@
-<template>
-    <div class="container">
-        <h2>確率表記</h2>
-        <table class="table table-hover">
-            <thead class="thead-light">
-                <tr>
-                    <th scope="col">レア度</th>
-                    <th scope="col">確率</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr v-for="(grade, index) in grades" :key="index">
-                    <td>{{ index }}</td>
-                    <td>{{ grade }} %</td>
-                </tr>
-            </tbody>
-        </table>
-        <h2>出現キャラクター</h2>
-        <table class="table table-hover">
-            <thead class="thead-light">
-                <tr>
-                    <th scope="col">レア度</th>
-                    <th scope="col">出現キャラクター</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr v-for="(character, index) in characters.SSR" :key="index">
-                    <td>SSR</td>
-                    <td>{{ character }}</td>
-                </tr>
-                <tr v-for="(character, index) in characters.SR" :key="index">
-                    <td>SR</td>
-                    <td>{{ character }}</td>
-                </tr>
-                <tr v-for="(character, index) in characters.R" :key="index">
-                    <td>R</td>
-                    <td>{{ character }}</td>
-                </tr>
-            </tbody>
-        </table>
+<style scoped>
+    h3 {
+        padding: 1rem 1.5rem;
+        border-left: 4px dotted #000;
+    }
+    .bottom-space {
+        margin-bottom: 2rem;
+    }
+</style>
 
+<template>
+    <div>
+        <div class="container bottom-space">
+            <blockquote>
+                <h3>確率表記</h3>
+            </blockquote>
+            <table class="table table-hover">
+                <thead class="thead-light">
+                    <tr>
+                        <th scope="col">レア度</th>
+                        <th scope="col">確率</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="(grade, index) in grades" :key="index">
+                        <td>{{ index }}</td>
+                        <td>{{ grade }} %</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="container bottom-space">
+            <blockquote>
+                <h3>出現キャラクター</h3>
+            </blockquote>
+            <table class="table table-hover">
+                <thead class="thead-light">
+                    <tr>
+                        <th scope="col">レア度</th>
+                        <th scope="col">出現キャラクター</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="(character, index) in characters.SSR" :key="index">
+                        <td>SSR</td>
+                        <td>{{ character }}</td>
+                    </tr>
+                    <tr v-for="(character, index) in characters.SR" :key="index">
+                        <td>SR</td>
+                        <td>{{ character }}</td>
+                    </tr>
+                    <tr v-for="(character, index) in characters.R" :key="index">
+                        <td>R</td>
+                        <td>{{ character }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </template>
 

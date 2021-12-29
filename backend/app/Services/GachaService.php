@@ -17,7 +17,8 @@ class GachaService
         $this->gradeProbability = GachaConst::GRADE_PROBABILITY;
     }
 
-    public function getGachaInfo() {
+    public function getGachaInfo()
+    {
         $infos = array();
         foreach ($this->gradeProbability as $grade => $var) {
             $value = $var / 100;
@@ -53,7 +54,8 @@ class GachaService
      * @param   String|Int  $rolls
      * @return  Array       $result
      */
-    public function normalRolls($rolls) {
+    public function normalRolls($rolls)
+    {
         $sr = $this->gradeProbability["SR"];
         $result = array();
         $cnt = 0;
@@ -79,7 +81,8 @@ class GachaService
      * @param   Array   $gradeResult
      * @return  Array   $characterResult
      */
-    public function pickCharacters($gradeResult) {
+    public function pickCharacters($gradeResult)
+    {
         $characterResult = array();;
         foreach ($gradeResult as $result) {
             $character = array();
