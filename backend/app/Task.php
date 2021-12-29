@@ -24,8 +24,9 @@ class Task extends Model
         return $this->create($inputs);
     }
 
-    public function updateTask($inputs) {
-        return $this->where('id', $inputs->id)->update($inputs);
+    public function updateTask($request) {
+        $inputs = $request->input();
+        return $this->where('id', $request->id)->update($inputs);
     }
 
     public function destroyTask($id) {

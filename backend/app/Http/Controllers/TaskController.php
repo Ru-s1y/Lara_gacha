@@ -27,8 +27,7 @@ class TaskController extends Controller
     }
 
     public function update(Request $request) {
-        $inputs = $request->all();
-        return $this->task->updateTask($inputs);
+        return $this->task->updateTask($request);
     }
 
     public function destroy(Request $request) {
