@@ -56,7 +56,6 @@ const router = new VueRouter({
     ]
 });
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('header-component', HeaderComponent);
 
 /**

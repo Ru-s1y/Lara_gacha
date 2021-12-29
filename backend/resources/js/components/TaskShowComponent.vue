@@ -16,8 +16,8 @@
                         <input type="text" class="col-sm-9 form-control-plaintext" readonly id="content" v-model="task.content">
                     </div>
                     <div class="form-group row border-bottom">
-                        <label for="person-in-charge" class="col-sm-3 col-form-label">Person In Charge</label>
-                        <input type="text" class="cols-sm-9 form-control-plaintext" readonly id="person-in-change" v-model="task.person_in_change">
+                        <label for="person-in-change" class="col-sm-3 col-form-label">Person In Charge</label>
+                        <input type="text" class="col-sm-9 form-control-plaintext" readonly id="person-in-change" v-model="task.person_in_change">
                     </div>
                 </form>
             </div>
