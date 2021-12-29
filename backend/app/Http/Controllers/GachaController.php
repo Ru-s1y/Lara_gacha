@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Services\GachaService;
+use GachaConst;
 use Illuminate\Http\Request;
 
 class GachaController extends Controller

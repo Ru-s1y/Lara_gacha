@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use GachaConst;
 use Illuminate\Http\Request;
 
 class GachaService
@@ -62,13 +63,13 @@ class GachaService
         $result = array();
         $cnt = 0;
         for ($i = 0; $i < $rolls; $i++) {
-            $rand = mt_rand(1, 10000);
+            $rand = mt_rand(1, GachaConst::PERCENTAGE);
             if ($rand > $sr) {
                 $cnt++;
             }
             if ($cnt == 10) {
                 while($rand > $sr) {
-                    $rand = mt_rand(1, 10000);
+                    $rand = mt_rand(1, GachaConst::PERCENTAGE);
                 }
             }
             array_push($result, $rand);

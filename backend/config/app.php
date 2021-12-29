@@ -227,6 +227,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'GachaService' => App\Facades\GachaService::class,
+        'GachaConst' => App\Consts\GachaConst::class,
 
     ],
 
