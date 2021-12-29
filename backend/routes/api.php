@@ -18,7 +18,7 @@ use Illuminate\Http\Request;
 // });
 
 Route::get('/tasks', 'TaskController@index');
-Route::post('/tasks/{id}', 'TaskController@store');
+Route::post('/tasks', 'TaskController@store');
 Route::get('/tasks/{id}', 'TaskController@show');
 Route::put('/tasks/{id}', 'TaskController@update');
 Route::delete('/tasks/{id}', 'TaskController@destroy');

@@ -1,27 +1,41 @@
 <template>
     <div class="container">
-        <fiv class="row justify-content-center">
+        <div class="row justify-content-center">
             <div class="col-sm-6">
-                <form action="form-group row">
+                <form v-on:submit.prevent="submit">
                     <div class="form-group row">
                         <label for="title" class="col-sm-3 col-form-label">Title</label>
-                        <input type="text" class="cols-sm-9 form-control" id="title">
+                        <input type="text" class="cols-sm-9 form-control" id="title" v-model="task.title">
                     </div>
                     <div class="form-group row">
                         <label for="content" class="col-sm-3 col-form-label">Content</label>
-                        <input type="text" class="cols-sm-9 form-control" id="title">
+                        <input type="text" class="cols-sm-9 form-control" id="content" v-model="task.content">
                     </div>
                     <div class="form-group row">
-                        <label for="person-in-charge" class="clo-sm-3 col-form-label">Person In Charge</label>
-                        <input type="text" class="cols-sm-9 form-control" id="person-in-charge">
+                        <label for="person-in-change" class="clo-sm-3 col-form-label">Person In Change</label>
+                        <input type="text" class="cols-sm-9 form-control" id="person-in-change" v-model="task.person_in_change">
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
             </div>
-        </fiv>
+        </div>
     </div>
 </template>
 
 <script>
-export default {}
+export default {
+    data: function () {
+        return {
+            task: {}
+        }
+    },
+    methods: {
+        submit() {
+            axios.post('/api/tasks', this.task)
+                .then((res) => {
+                    this.$router.push({name: 'task.list'});
+                });
+        }
+    }
+}
 </script>
