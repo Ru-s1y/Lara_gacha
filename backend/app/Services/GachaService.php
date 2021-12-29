@@ -32,7 +32,7 @@ class GachaService
      */
     public function setResults($request)
     {
-        $rolls = $request->rolls;
+        $rolls = $request["rolls"];
 
         $results = array();
         if (!empty($rolls)) {

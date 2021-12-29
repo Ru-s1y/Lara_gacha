@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Services\GachaService;
+use App\Http\Requests\GachaRequest;
 use GachaConst;
 use Illuminate\Http\Request;
 
@@ -25,8 +26,8 @@ class GachaController extends Controller
         return $this->service->setResults($request);
     }
 
-    public function debug(Request $request)
+    public function debug(GachaRequest $request)
     {
-        return $this->service->setResults($request);
+        return $this->service->setResults($request->validated());
     }
 }
