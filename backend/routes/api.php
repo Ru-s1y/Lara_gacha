@@ -22,3 +22,7 @@ Route::post('/tasks', 'TaskController@store');
 Route::get('/tasks/{id}', 'TaskController@show');
 Route::put('/tasks/{id}', 'TaskController@update');
 Route::delete('/tasks/{id}', 'TaskController@destroy');
+
+Route::get('/gacha/info', 'GachaController@detail');
+Route::post('/gacha', 'GachaController@gacha');
+Route::get('/gacha/debug', 'GachaController@debug');
