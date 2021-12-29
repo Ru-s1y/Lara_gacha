@@ -30,6 +30,6 @@ class Task extends Model
     }
 
     public function destroyTask($id) {
-        return $this->delete();
+        return $this->where('id', $id)->delete();
     }
 }
