@@ -2,6 +2,13 @@
 
 ## 環境構築
 
+ket generate忘れず
+
+### envファイル
+```
+$ copy .env.example .env
+```
+
 ### mysqlの環境変数変えるときは
 ```
 $ docker-compose down --volume
