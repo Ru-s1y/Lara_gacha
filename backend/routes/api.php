@@ -16,11 +16,22 @@ use Illuminate\Http\Request;
 // Route::middleware('auth:api')->get('/user', function (Request $request) {
 //     return $request->user();
 // });
-Route::get('/debug', 'DebugController@info');
-Route::get('/debug/check_session', 'DebugController@checkSession');
 
-Route::get('/tasks', 'TaskController@index');
-Route::post('/tasks', 'TaskController@store');
-Route::get('/tasks/{id}', 'TaskController@show');
-Route::put('/tasks/{id}', 'TaskController@update');
-Route::delete('/tasks/{id}', 'TaskController@destroy');
+Route::prefix('debug')->group(function () {
+    Route::get('/', 'DebugController@info');
+    Route::get('/check_session', 'DebugController@checkSession');
+});
+
+Route::prefix('tasks')->group(function () {
+    Route::get('/', 'TaskController@index');
+    Route::get('/{id}', 'TaskController@show');
+    Route::post('/', 'TaskController@store');
+    Route::put('/{id}', 'TaskController@update');
+    Route::delete('/{id}', 'TaskController@destroy');
+});
+
+Route::prefix('gacha')->group(function () {
+    Route::get('/info', 'GachaController@detail');
+    Route::get('/debug', 'GachaController@debug');
+    Route::post('/', 'GachaController@gacha');
+});
