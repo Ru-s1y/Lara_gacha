@@ -15,6 +15,10 @@
 //     return view('welcome');
 // });
 
+ROute::get('/phpinfo', function () {
+    return phpinfo();
+});
+
 Route::get('/{any}', function () {
     return view('app');
 })->where('any', '.*');
