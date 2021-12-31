@@ -16,6 +16,8 @@ use Illuminate\Http\Request;
 // Route::middleware('auth:api')->get('/user', function (Request $request) {
 //     return $request->user();
 // });
+Route::get('/debug', 'DebugController@info');
+Route::get('/debug/check_session', 'DebugController@checkSession');
 
 Route::get('/tasks', 'TaskController@index');
 Route::post('/tasks', 'TaskController@store');

@@ -16,4 +16,12 @@ RUN apt-get update \
 RUN curl -sL https://deb.nodesource.com/setup_12.x | bash -
 RUN apt-get install -y nodejs
 
+# RUN git clone https://github.com/phpredis/phpredis.git /usr/src/php/ext/redis && \
+#     docker-php-ext-install redis
+
+RUN npm install
+RUN npm install --save vue-router bootstrap-vue bootstrap
+
+COPY ./php.ini 	/usr/local/etc/php/
+
 WORKDIR /var/www/html
