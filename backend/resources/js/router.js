@@ -1,11 +1,12 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 
+import NotFoundComponent    from "./components/NotFoundComponent";
+import GachaHomeComponent   from "./components/GachaHomeComponent";
 import TaskListComponent    from "./components/Task/TaskListComponent";
 import TaskShowComponent    from "./components/Task/TaskShowComponent";
 import TaskCreateComponent  from "./components/Task/TaskCreateComponent";
 import TaskEditComponent    from "./components/Task/TaskEditComponent";
-import GachaHomeComponent   from "./components/GachaHomeComponent";
 
 Vue.use(Router);
 
@@ -38,6 +39,10 @@ const router = new Router ({
             path:   '/rolls',
             name:   'rolls.info',
             component: GachaHomeComponent
+        },
+        {
+            path: '/*',
+            component: NotFoundComponent
         },
     ]
 });
