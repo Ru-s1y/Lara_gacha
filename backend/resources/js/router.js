@@ -2,6 +2,7 @@ import Vue from 'vue';
 import Router from 'vue-router';
 
 import NotFoundComponent    from "./components/NotFoundComponent";
+import LandingComponent     from "./components/LandingComponent";
 import GachaHomeComponent   from "./components/GachaHomeComponent";
 import TaskListComponent    from "./components/Task/TaskListComponent";
 import TaskShowComponent    from "./components/Task/TaskShowComponent";
@@ -13,6 +14,11 @@ Vue.use(Router);
 const router = new Router ({
     mode: 'history',
     routes: [
+        {
+            path: '/home',
+            name: 'home',
+            component: LandingComponent
+        },
         {
             path: '/tasks',
             name: 'task.list',
@@ -39,10 +45,6 @@ const router = new Router ({
             path:   '/rolls',
             name:   'rolls.info',
             component: GachaHomeComponent
-        },
-        {
-            path: '/*',
-            component: NotFoundComponent
         },
     ]
 });

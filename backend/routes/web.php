@@ -11,14 +11,18 @@
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('welcome');
+});
 
-ROute::get('/phpinfo', function () {
+Route::get('/phpinfo', function () {
     return phpinfo();
 });
 
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
 Route::get('/{any}', function () {
-    return view('app');
+    return response()->json(["status" => "404", "message" => "Not Found"]);
 })->where('any', '.*');

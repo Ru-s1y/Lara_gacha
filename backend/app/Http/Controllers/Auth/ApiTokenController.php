@@ -6,6 +6,12 @@ use Illuminate\Http\Request;
 
 class ApiTokenController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth:api');
+    }
+
     /**
      * 認証済みのユーザーのAPIトークンを更新する
      *

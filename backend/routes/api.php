@@ -22,12 +22,24 @@ Route::prefix('debug')->group(function () {
     Route::get('/check_session', 'DebugController@checkSession');
 });
 
-Route::prefix('tasks')->group(function () {
-    Route::get('/', 'TaskController@index');
-    Route::get('/{id}', 'TaskController@show');
-    Route::post('/', 'TaskController@store');
-    Route::put('/{id}', 'TaskController@update');
-    Route::delete('/{id}', 'TaskController@destroy');
+Route::middleware('auth:api')->group(function () {
+    Route::get('/user', function (Request $request) {
+        $user = $request->user();
+        return response()->json($user);
+    });
+    Route::get('/session', function (Request $request) {
+        return var_dump($request);
+    });
+});
+
+Route::middleware('auth:api')->group(function () {
+    Route::prefix('tasks')->group(function () {
+        Route::get('/', 'TaskController@index');
+        Route::get('/{id}', 'TaskController@show');
+        Route::post('/', 'TaskController@store');
+        Route::put('/{id}', 'TaskController@update');
+        Route::delete('/{id}', 'TaskController@destroy');
+    });
 });
 
 Route::prefix('gacha')->group(function () {
