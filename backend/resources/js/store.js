@@ -13,7 +13,10 @@ const mutations = {
         axios.get('/api/user')
         .then(res => {
             state.user = res.data;
-        })
+            console.log(state.user);
+        }).catch(err => {
+            console.log(err.response);
+        });
     }
 }
 
@@ -24,7 +27,7 @@ const getters = {
 }
 
 const actions = {
-    getUser(ctx) {
+    getUserAction(ctx) {
         ctx.commit('getUser');
     }
 }
