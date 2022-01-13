@@ -24,5 +24,5 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/{any}', function () {
-    return response()->json(["status" => "404", "message" => "Not Found"]);
+    return redirect()->route('login');
 })->where('any', '.*');
