@@ -34,6 +34,8 @@ export default {
             axios.post('/api/tasks', this.task)
                 .then((res) => {
                     this.$router.push({name: 'task.list'});
+                }).catch((err) => {
+                    console.log(err.response);
                 });
         }
     }

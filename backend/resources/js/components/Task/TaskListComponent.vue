@@ -1,5 +1,11 @@
 <template>
     <div class="container">
+        <div class="box-bottom">
+            <router-link v-bind:to="{name: 'task.create'}">
+                <button class="btn btn-success">Add</button>
+            </router-link>
+        </div>
+
         <table class="table table-hover">
             <thead class="thead-light">
                 <tr>
@@ -65,3 +71,8 @@
     }
 </script>
 
+<style scoped>
+    .box-bottom {
+        margin-bottom: 1.5rem;
+    }
+</style>
