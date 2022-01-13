@@ -39,17 +39,20 @@
 </template>
 
 <script>
-    export default {
-        methods: {
-            logout() {
-                axios.post('/logout')
-                .then(res => {
-                    console.log(res.data);
-                    window.location.href = "/";
-                }).catch(err => {
-                    console.log(err.response);
-                })
-            }
+export default {
+    methods: {
+        logout() {
+            axios.post('/logout')
+            .then(res => {
+                console.log(res.data);
+                window.location.href = "/";
+            }).catch(err => {
+                console.log(err.response);
+            })
         }
+    },
+    mounted() {
+        this.$store.dispatch('getUser');;
     }
+}
 </script>
