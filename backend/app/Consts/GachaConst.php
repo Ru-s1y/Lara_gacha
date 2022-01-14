@@ -2,22 +2,38 @@
 
 namespace App\Consts;
 
+/**
+ * ガチャ・キャラクターに関連するマスター
+ */
 class GachaConst
 {
+    /**
+     * 確率の分母
+     *   100%の100倍
+     */
     const PERCENTAGE = 10000;
 
+    /**
+     * レアリティごとの確率
+     *   百分率の100倍
+     */
     const GRADE_PROBABILITY = [
         "SSR"   => 300,
         "SR"    => 1200,
         "R"     => 8500,
     ];
 
+    /**
+     * キャラクター識別子
+     *   -> DBに移行予定
+     */
     const CHARACTERS = [
         "SSR"   => ["5001", "5002", "5003", "5004"],
         "SR"    => ["4001", "4002", "4003", "4004", "4005", "4006"],
         "R"     => ["3001", "3002", "3003", "3004", "3005", "3006", "3007", "3008", "3009", "3010"]
     ];
 
+    // 性別
     const GENDER = [
         [
             "name_en" => "Unknown",
@@ -33,6 +49,7 @@ class GachaConst
         ],
     ];
 
+    // 属性
     const ELEMENTS = [
         [
             "name_en" => "Fire",
@@ -60,6 +77,7 @@ class GachaConst
         ]
     ];
 
+    // 種族
     const RACES = [
         [
             "name_en" => "Human",
@@ -83,6 +101,7 @@ class GachaConst
         ]
     ];
 
+    // 職業・役割
     const ROLES = [
         [
             "name_en" => "Adventurer",
