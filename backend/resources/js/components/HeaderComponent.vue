@@ -19,7 +19,9 @@
                             </router-link>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" >Pricing</a>
+                            <router-link v-bind:to="{name: 'rolls.info'}">
+                                <a class="nav-link" >ガチャ</a>
+                            </router-link>
                         </li>
                     </ul>
                     <ul class="navbar-nav">
