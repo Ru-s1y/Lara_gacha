@@ -1,6 +1,6 @@
 import Vue from "vue";
 import router from "./router";
-import HomeComponent from "./components/HomeComponent.vue";
+import HomeComponent from "./components/HomeComponent";
 import store from "./store";
 
 require('./bootstrap');
