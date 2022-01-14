@@ -19,7 +19,9 @@
                             </router-link>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" >Pricing</a>
+                            <router-link v-bind:to="{name: 'rolls.info'}">
+                                <a class="nav-link" >ガチャ</a>
+                            </router-link>
                         </li>
                     </ul>
                     <ul class="navbar-nav">
@@ -39,17 +41,19 @@
 </template>
 
 <script>
-    export default {
-        methods: {
-            logout() {
-                axios.post('/logout')
-                .then(res => {
-                    console.log(res.data);
-                    window.location.href = "/";
-                }).catch(err => {
-                    console.log(err.response);
-                })
-            }
+export default {
+    methods: {
+        logout() {
+            axios.post('/logout')
+            .then(res => {
+                window.location.href = "/";
+            }).catch(err => {
+                console.log(err.response);
+            })
         }
+    },
+    created() {
+        this.$store.dispatch('getUserAction');
     }
+}
 </script>

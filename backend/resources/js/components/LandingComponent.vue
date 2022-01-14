@@ -7,10 +7,6 @@
 </template>
 
 <script>
-export default {
-    mounted() {
-        this.$store.dispatch('getUser');;
-    }
-}
+export default {}
 </script>
 
