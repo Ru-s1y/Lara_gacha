@@ -33,7 +33,6 @@ Route::middleware('auth:api')->group(function () {
 });
 
 Route::middleware('auth:api')->group(function () {
-
     Route::prefix('tasks')->group(function () {
         Route::get('/', 'TaskController@index');
         Route::get('/{id}', 'TaskController@show');
@@ -41,6 +40,7 @@ Route::middleware('auth:api')->group(function () {
         Route::put('/{id}', 'TaskController@update');
         Route::delete('/{id}', 'TaskController@destroy');
     });
+});
 
 Route::prefix('gacha')->group(function () {
     Route::get('/info', 'GachaController@detail');
