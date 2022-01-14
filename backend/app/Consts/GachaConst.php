@@ -137,4 +137,72 @@ class GachaConst
         ],
     ];
 
+    // 装備種
+    const EQUIP = [
+        [
+            "name_en" => "Sword",
+            "name_jp" => "片手剣"
+        ],
+        [
+            "name_en" => "Tweihander",
+            "name_jp" => "両手剣"
+        ],
+        [
+            "name_en" => "Axe",
+            "name_jp" => "戦斧"
+        ],
+        [
+            "name_en" => "Spear",
+            "name_jp" => "長槍"
+        ],
+        [
+            "name_en" => "Wand",
+            "name_jp" => "魔導杖"
+        ],
+        [
+            "name_en" => "Book",
+            "name_jp" => "魔導書"
+        ],
+        [
+            "name_en" => "Bow",
+            "name_jp" => "弓"
+        ],
+    ];
+
+    // 所属
+    const BELONGS = [
+        [
+            "name_en" => "none",
+            "name_jp" => "無所属"
+        ],
+        [
+            "name_en" => "Adventures Guild",
+            "name_jp" => "冒険者ギルド"
+        ],
+        [
+            "name_en" => "Kingdom Knights",
+            "name_jp" => "王国騎士団"
+        ],
+        [
+            "name_en" => "Mercenary Corps",
+            "name_jp" => "傭兵団"
+        ],
+        [
+            "name_en" => "Imperial Academy",
+            "name_jp" => "帝国魔導院"
+        ],
+        [
+            "name_en" => "Church",
+            "name_jp" => "法令院"
+        ],
+    ];
+
+    const INDEX = [
+        "race"      => self::RACES,
+        "gender"    => self::GENDER,
+        "element"   => self::ELEMENTS,
+        "role"      => self::ROLES,
+        "equip"     => self::EQUIP,
+        "belongs"   => self::BELONGS
+    ];
 }

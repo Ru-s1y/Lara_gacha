@@ -42,9 +42,9 @@ Route::middleware('auth:api')->group(function () {
         Route::delete('/{id}', 'TaskController@destroy');
     });
 
-    Route::prefix('gacha')->group(function () {
-        Route::get('/info', 'GachaController@detail');
-        Route::get('/debug', 'GachaController@debug');
-        Route::post('/', 'GachaController@gacha');
-    });
+Route::prefix('gacha')->group(function () {
+    Route::get('/info', 'GachaController@detail');
+    Route::get('/debug', 'GachaController@debug');
+    Route::post('/', 'GachaController@gacha');
+    Route::get('/info/characters', 'GachaController@charactersInfo');
 });

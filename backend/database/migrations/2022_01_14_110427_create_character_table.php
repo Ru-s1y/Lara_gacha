@@ -13,18 +13,19 @@ class CreateCharacterTable extends Migration
      */
     public function up()
     {
-        Schema::create('character', function (Blueprint $table) {
+        Schema::create('characters', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name')->unique();
-            $table->string('rarity');
-            $table->integer('race');
-            $table->integer('gender');
-            $table->integer('element');
-            $table->integer('role');
-            $table->integer('equipe');
-            $table->integer('belongs');
-            $table->string('position');
-            $table->text('description');
+            $table->string('cid', 4)->unique()->comment("キャラクター識別ID");
+            $table->string('name')->unique()->comment("名前");
+            $table->string('rarity', 1)->comment("レアリティ");
+            $table->integer('race')->unsigned()->comment("種族");
+            $table->integer('gender')->unsigned()->comment("性別");
+            $table->integer('element')->unsigned()->comment("元素属性");
+            $table->integer('role')->unsigned()->comment("職業");
+            $table->integer('equip')->unsigned()->comment("装備");
+            $table->integer('belongs')->unsigned()->comment("所属");
+            $table->string('position')->nullable()->comment("肩書き、二つ名");
+            $table->text('description')->nullable()->comment("説明書き");
             $table->timestamps();
         });
     }
@@ -36,6 +37,6 @@ class CreateCharacterTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('character');
+        Schema::dropIfExists('characters');
     }
 }

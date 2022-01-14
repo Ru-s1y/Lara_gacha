@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Character;
 use App\Services\GachaService;
 use App\Http\Requests\GachaRequest;
 use GachaConst;
@@ -29,5 +30,16 @@ class GachaController extends Controller
     public function debug(GachaRequest $request)
     {
         return $this->service->setResults($request->validated());
+    }
+
+    public function charactersInfo(Request $request)
+    {
+        $character = new Character();
+
+        $results = $this->service->getGachaInfo();
+        $charactersInfo = $character->getCharactersInfo($results["characters"]);
+        $results["characters"] = $charactersInfo;
+
+        return $results;
     }
 }

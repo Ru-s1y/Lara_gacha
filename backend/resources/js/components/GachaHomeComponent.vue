@@ -41,17 +41,10 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for="(character, index) in characters.SSR" :key="'ssr-' + index">
-                        <td>SSR</td>
-                        <td>{{ character }}</td>
-                    </tr>
-                    <tr v-for="(character, index) in characters.SR" :key="'sr-' + index">
-                        <td>SR</td>
-                        <td>{{ character }}</td>
-                    </tr>
-                    <tr v-for="(character, index) in characters.R" :key="'r-' + index">
-                        <td>R</td>
-                        <td>{{ character }}</td>
+                    <tr v-for="(character, index) in characters" :key="'character-' + index">
+                        <td v-for="(column, index) in character" :key="'column-' + index">
+                            {{ column }}
+                        </td>
                     </tr>
                 </tbody>
             </table>
@@ -69,7 +62,7 @@
         },
         methods: {
             getInfo() {
-                axios.get('/api/gacha/info')
+                axios.get('/api/gacha/info/characters')
                     .then((res) => {
                         this.grades = res.data["grades"];
                         this.characters = res.data["characters"];

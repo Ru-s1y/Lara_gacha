@@ -12,6 +12,8 @@ class TaskTableSeeder extends Seeder
      */
     public function run()
     {
+        Task::truncate();
+
         for ($i = 1; $i <= 10; $i++) {
             Task::create([
                 'title'             => 'title' . $i,
